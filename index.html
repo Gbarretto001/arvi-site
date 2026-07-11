@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARVI · Studios na Vila Olímpia — na rua do Insper</title>
+<meta name="description" content="Studios mobiliados no Today Faria Lima, Rua Quatá, Vila Olímpia. A 6 minutos a pé do Insper, perto da Faria Lima, do JK Iguatemi e do Ibirapuera.">
+<style>
+  :root{
+    --verde-900:#04342C; --verde-800:#085041; --verde-600:#0F6E56;
+    --mint:#E1F5EE; --mint-2:#9FE1CB; --mint-3:#5DCAA5;
+    --amber:#FAC775; --amber-900:#412402;
+    --paper:#F4F2EC; --areia:#F1EFE8; --linha:#E5E2DA;
+    --ink:#2C2C2A; --cinza:#5F5E5A; --cinza-2:#888780;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+  img{display:block;max-width:100%}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-block;background:var(--verde-600);color:#fff;font-size:14px;font-weight:500;padding:10px 22px;border-radius:22px;transition:background .2s}
+  .btn:hover{background:var(--verde-800)}
+  .btn-amber{background:var(--amber);color:var(--amber-900)}
+  .btn-amber:hover{background:#EF9F27}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--linha)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;max-width:1100px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand svg{height:44px;width:auto}
+  .brand-name{font-family:Didot,"Bodoni MT","Times New Roman",Georgia,serif;font-size:26px;letter-spacing:5px;color:var(--verde-900)}
+  .nav ul{display:flex;gap:26px;list-style:none;font-size:14px;color:var(--cinza)}
+  .nav ul a:hover{color:var(--verde-600)}
+  @media(max-width:760px){.nav ul{display:none}}
+
+  .hero{background:var(--mint);text-align:center;padding:64px 24px 48px}
+  .hero .tag{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--verde-600);margin-bottom:10px}
+  .hero h1{font-size:clamp(28px,4.5vw,44px);font-weight:600;color:var(--verde-900);line-height:1.2}
+  .hero p.sub{font-size:17px;color:var(--verde-800);margin:14px auto 30px;max-width:640px}
+  .stats{display:flex;justify-content:center;gap:12px;max-width:720px;margin:0 auto 30px;flex-wrap:wrap}
+  .stat{background:#fff;border:1px solid var(--mint-2);border-radius:14px;padding:16px 14px;flex:1;min-width:140px;text-align:left}
+  .stat .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--cinza-2)}
+  .stat .num{font-size:26px;font-weight:600;color:var(--verde-800)}
+  .stat .det{font-size:12px;color:var(--cinza-2)}
+  .stat.destaque{background:var(--verde-900);border-color:var(--verde-900);flex:1.35}
+  .stat.destaque .lbl,.stat.destaque .det{color:var(--mint-2)}
+  .stat.destaque .num{color:var(--mint)}
+  .hero .selos{font-size:13px;color:var(--verde-800);margin-top:22px}
+
+  .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .strip img{width:100%;height:260px;object-fit:cover}
+  @media(max-width:760px){.strip{grid-template-columns:1fr}.strip img{height:200px}}
+
+  section{padding:60px 0 8px}
+  h2{font-size:26px;font-weight:600;color:var(--ink)}
+  .sec-sub{font-size:14px;color:var(--cinza-2);margin:4px 0 24px}
+
+  .mapa{border:1px solid var(--linha);border-radius:14px;overflow:hidden}
+  .mapa svg{display:block;width:100%;height:auto}
+  .metros{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:14px}
+  .metro{background:var(--areia);border-radius:10px;padding:14px;text-align:center}
+  .metro b{display:block;font-size:20px;font-weight:600;color:var(--verde-600)}
+  .metro span{font-size:13px;color:var(--cinza)}
+
+  .rotinas{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:760px){.rotinas{grid-template-columns:1fr}}
+  .rotina{border:1px solid var(--linha);border-radius:14px;padding:22px}
+  .rotina h3{font-size:16px;font-weight:600;margin:6px 0 6px}
+  .rotina p{font-size:14px;color:var(--cinza)}
+  .rotina .ico{font-size:22px;color:var(--verde-600)}
+
+  .galeria{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  @media(max-width:900px){.galeria{grid-template-columns:repeat(2,1fr)}}
+  .galeria figure{position:relative;border-radius:12px;overflow:hidden;cursor:zoom-in;margin:0}
+  .galeria img{width:100%;height:190px;object-fit:cover;transition:transform .3s}
+  .galeria figure:hover img{transform:scale(1.05)}
+  .galeria figcaption{position:absolute;left:0;right:0;bottom:0;font-size:12px;color:#fff;background:linear-gradient(transparent,rgba(4,52,44,.85));padding:22px 12px 8px}
+
+  .comuns{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+  .comum{background:var(--mint);border-radius:12px;padding:20px;text-align:center}
+  .comum b{display:block;font-size:14px;font-weight:600;color:var(--verde-900);margin-top:8px}
+  .comum span{font-size:12px;color:var(--verde-800)}
+  .comum .ico{font-size:26px}
+
+  .unidades{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:900px){.unidades{grid-template-columns:1fr}}
+  .card{border:1px solid var(--linha);border-radius:14px;overflow:hidden;transition:box-shadow .2s}
+  .card:hover{box-shadow:0 6px 24px rgba(4,52,44,.12)}
+  .card img{width:100%;height:200px;object-fit:cover}
+  .card .body{padding:14px 16px 18px}
+  .card h3{font-size:16px;font-weight:600}
+  .card .det{font-size:13px;color:var(--cinza-2);margin:2px 0 10px}
+  .card .preco{font-size:20px;font-weight:600;color:var(--verde-600)}
+  .card .preco small{font-size:13px;color:var(--cinza-2);font-weight:400}
+  .badge{display:inline-block;background:#FAEEDA;color:#854F0B;font-size:11px;padding:3px 10px;border-radius:10px;margin-bottom:8px}
+
+  .cta{background:var(--verde-900);margin-top:60px}
+  .cta .in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:36px 24px;max-width:1100px;margin:0 auto;flex-wrap:wrap}
+  .cta h2{color:var(--mint);font-size:22px}
+  .cta p{color:var(--mint-2);font-size:14px}
+
+  footer{background:#fff;padding:26px 0;border-top:1px solid var(--linha)}
+  footer .in{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;padding:0 24px;font-size:13px;color:var(--cinza-2);flex-wrap:wrap;gap:10px}
+
+  .lightbox{position:fixed;inset:0;background:rgba(4,52,44,.92);display:none;align-items:center;justify-content:center;z-index:100;cursor:zoom-out}
+  .lightbox.aberta{display:flex}
+  .lightbox img{max-width:92vw;max-height:88vh;border-radius:8px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#topo" aria-label="Arvi — início">
+      <svg viewBox="0 0 96 72" role="img" aria-label="Monograma Arvi"><rect x="2" y="2" width="92" height="68" rx="4" fill="#04342C"/><rect x="7" y="7" width="82" height="58" rx="2" fill="none" stroke="#E1F5EE" stroke-width="2.5"/><text x="48" y="54" font-family="Didot,'Bodoni MT','Times New Roman',Georgia,serif" font-size="46" fill="#E1F5EE" text-anchor="middle" letter-spacing="-4">AV</text></svg>
+      <span class="brand-name">ARVI</span>
+    </a>
+    <ul>
+      <li><a href="#unidades">Studios</a></li>
+      <li><a href="#edificio">O edifício</a></li>
+      <li><a href="#bairro">O bairro</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a class="btn" href="#contato">Agendar visita</a>
+  </div>
+</header>
+
+<main id="topo">
+
+<div class="hero">
+  <p class="tag">Vila Olímpia · São Paulo</p>
+  <h1>Na rua do Insper.<br>Entre a Faria Lima, o JK e o Ibirapuera.</h1>
+  <p class="sub">Studios mobiliados no Today Faria Lima — o ponto exato onde a vida universitária encontra o melhor de São Paulo.</p>
+  <div class="stats">
+    <div class="stat destaque"><span class="lbl">Insper</span><span class="num">6 min</span><span class="det">a pé, pela mesma rua</span></div>
+    <div class="stat"><span class="lbl">Faria Lima</span><span class="num">3 min</span><span class="det">a pé</span></div>
+    <div class="stat"><span class="lbl">JK Iguatemi</span><span class="num">5 min</span><span class="det">de bike</span></div>
+    <div class="stat"><span class="lbl">Ibirapuera</span><span class="num">12 min</span><span class="det">de bike, pela ciclovia</span></div>
+  </div>
+  <a class="btn" href="#unidades">Ver studios disponíveis</a>
+  <p class="selos">✓ Mobiliado &nbsp;·&nbsp; ✓ Contas incluídas &nbsp;·&nbsp; ✓ Para estudantes e jovens profissionais</p>
+</div>
+
+<div class="strip">
+  <img src="assets/img/unidades/quarto-04.jpg" alt="Studio mobiliado com varanda e vista para a cidade">
+  <img src="assets/img/unidades/varanda-03.jpg" alt="Varanda com vista para o skyline da Vila Olímpia">
+  <img src="assets/img/unidades/cozinha-01.jpg" alt="Cozinha completa do studio">
+</div>
+
+<section id="bairro">
+  <div class="wrap">
+    <h2>Campus, carreira e parque — tudo em volta</h2>
+    <p class="sec-sub">Today Faria Lima · Rua Quatá, Vila Olímpia. Ciclovia da Av. Hélio Pellegrino ligando direto ao Ibirapuera.</p>
+    <div class="mapa">
+      <svg viewBox="0 0 632 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa estilizado: o edifício entre o Insper, o JK Iguatemi, a Av. Faria Lima e o Parque Ibirapuera">
+        <rect width="632" height="280" fill="#F4F2EC"/>
+        <rect x="452" y="0" width="180" height="52" rx="6" fill="#C0DD97"/>
+        <text x="542" y="24" font-size="12" fill="#27500A" text-anchor="middle" font-weight="600">Parque Ibirapuera</text>
+        <text x="542" y="39" font-size="9.5" fill="#3B6D11" text-anchor="middle">12 min de bike</text>
+        <path d="M120,280 L200,0" stroke="#D3D1C7" stroke-width="18" fill="none"/>
+        <text x="152" y="150" font-size="11" fill="#5F5E5A" transform="rotate(-72 152 150)" text-anchor="middle">Av. Brig. Faria Lima</text>
+        <path d="M0,52 L440,80" stroke="#D3D1C7" stroke-width="12" fill="none"/>
+        <text x="330" y="62" font-size="10" fill="#888780" transform="rotate(4 330 62)" text-anchor="middle">Av. Juscelino Kubitschek</text>
+        <path d="M0,210 L632,178" stroke="#E5E2DA" stroke-width="14" fill="none"/>
+        <text x="380" y="212" font-size="11" fill="#888780" transform="rotate(-3 380 212)" text-anchor="middle">Rua Quatá</text>
+        <path d="M528,280 L512,52" stroke="#D3D1C7" stroke-width="12" fill="none"/>
+        <path d="M536,280 L520,52" stroke="#1D9E75" stroke-width="3" fill="none"/>
+        <text x="507" y="160" font-size="10" fill="#0F6E56" transform="rotate(86 507 160)" text-anchor="middle">Av. Hélio Pellegrino · ciclovia</text>
+        <path d="M340,0 L365,280" stroke="#E5E2DA" stroke-width="8" fill="none"/>
+        <path d="M255,196 L450,182" stroke="#0F6E56" stroke-width="3.5" stroke-dasharray="7 5" fill="none"/>
+        <path d="M255,196 L100,62" stroke="#BA7517" stroke-width="2.5" stroke-dasharray="6 5" fill="none"/>
+        <path d="M255,196 L178,132" stroke="#534AB7" stroke-width="2.5" stroke-dasharray="6 5" fill="none"/>
+        <rect x="290" y="162" width="112" height="20" rx="10" fill="#E1F5EE" stroke="#0F6E56"/>
+        <text x="346" y="176" font-size="10" fill="#085041" text-anchor="middle" font-weight="600">6 min a pé · 500 m</text>
+        <rect x="40" y="30" width="120" height="34" rx="8" fill="#854F0B"/>
+        <text x="100" y="45" font-size="11" fill="#FAEEDA" text-anchor="middle" font-weight="600">JK Iguatemi</text>
+        <text x="100" y="58" font-size="9.5" fill="#FAC775" text-anchor="middle">5 min de bike</text>
+        <rect x="118" y="108" width="120" height="24" rx="12" fill="#EEEDFE" stroke="#7F77DD"/>
+        <text x="178" y="124" font-size="10" fill="#3C3489" text-anchor="middle">Faria Lima · 3 min a pé</text>
+        <rect x="190" y="154" width="130" height="34" rx="8" fill="#04342C"/>
+        <text x="255" y="169" font-size="11" fill="#E1F5EE" text-anchor="middle" font-weight="600">Today Faria Lima</text>
+        <text x="255" y="182" font-size="9.5" fill="#9FE1CB" text-anchor="middle">seu novo endereço</text>
+        <circle cx="255" cy="196" r="4" fill="#04342C"/>
+        <rect x="405" y="140" width="90" height="34" rx="8" fill="#A32D2D"/>
+        <text x="450" y="155" font-size="11" fill="#FCEBEB" text-anchor="middle" font-weight="600">Insper</text>
+        <text x="450" y="168" font-size="9.5" fill="#F7C1C1" text-anchor="middle">na mesma rua</text>
+        <circle cx="450" cy="182" r="4" fill="#A32D2D"/>
+        <rect x="552" y="196" width="70" height="36" rx="8" fill="#fff" stroke="#1D9E75"/>
+        <text x="587" y="211" font-size="9.5" fill="#0F6E56" text-anchor="middle"><tspan x="587" dy="0">pegue a</tspan><tspan x="587" dy="11">ciclovia aqui</tspan></text>
+        <rect x="20" y="242" width="180" height="24" rx="12" fill="#fff" stroke="#E5E2DA"/>
+        <text x="110" y="258" font-size="10" fill="#5F5E5A" text-anchor="middle">Estação Vila Olímpia · 6 min de bike</text>
+      </svg>
+    </div>
+    <div class="metros">
+      <div class="metro"><b>6 min</b><span>a pé do Insper</span></div>
+      <div class="metro"><b>3 min</b><span>a pé da Faria Lima</span></div>
+      <div class="metro"><b>5 min</b><span>de bike do JK Iguatemi</span></div>
+      <div class="metro"><b>12 min</b><span>de bike do Ibirapuera</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Um endereço, duas rotinas</h2>
+    <p class="sec-sub">Feito para quem estuda, trabalha — ou os dois.</p>
+    <div class="rotinas">
+      <div class="rotina">
+        <span class="ico">🎓</span>
+        <h3>Para quem estuda</h3>
+        <p>Acorde 20 minutos antes da aula: o Insper fica na mesma rua. Estude no coworking do prédio, divida um studio duplo para caber no orçamento — e desestresse correndo no Ibirapuera.</p>
+      </div>
+      <div class="rotina">
+        <span class="ico">💼</span>
+        <h3>Para quem trabalha</h3>
+        <p>Escritórios da Faria Lima a minutos pela ciclovia, happy hour na Vila Olímpia, compras no JK — e piscina no rooftop para depois do expediente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="studio">
+  <div class="wrap">
+    <h2>Conheça o studio</h2>
+    <p class="sec-sub">Fotos reais das unidades — clique para ampliar.</p>
+    <div class="galeria">
+      <figure><img src="assets/img/unidades/quarto-01.jpg" alt="Quarto com cama de casal e espelho"><figcaption>Quarto</figcaption></figure>
+      <figure><img src="assets/img/unidades/cozinha-04.jpg" alt="Cozinha com armários verdes e bancada de granito"><figcaption>Cozinha completa</figcaption></figure>
+      <figure><img src="assets/img/unidades/home-office-01.jpg" alt="Marcenaria com bancada de estudos"><figcaption>Espaço de estudos</figcaption></figure>
+      <figure><img src="assets/img/unidades/banheiro-01.jpg" alt="Banheiro com gabinete e box"><figcaption>Banheiro</figcaption></figure>
+      <figure><img src="assets/img/unidades/varanda-04.jpg" alt="Varanda aberta com vista para a cidade"><figcaption>Varanda</figcaption></figure>
+      <figure><img src="assets/img/unidades/closet-01.jpg" alt="Armário e ar-condicionado"><figcaption>Armários</figcaption></figure>
+      <figure><img src="assets/img/unidades/vista-01.jpg" alt="Vista da janela para o skyline"><figcaption>Vista</figcaption></figure>
+      <figure><img src="assets/img/unidades/varanda-05.jpg" alt="Varanda envidraçada com vista panorâmica"><figcaption>Varanda envidraçada</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="edificio">
+  <div class="wrap">
+    <h2>Áreas comuns do edifício</h2>
+    <p class="sec-sub">Tudo incluso no aluguel. Fotos em breve — agende um tour para conhecer.</p>
+    <div class="comuns">
+      <div class="comum"><span class="ico">🏊</span><b>Piscina com borda infinita</b><span>no rooftop</span></div>
+      <div class="comum"><span class="ico">🏋️</span><b>Academia</b><span>equipada</span></div>
+      <div class="comum"><span class="ico">💻</span><b>Coworking</b><span>para estudar e trabalhar</span></div>
+      <div class="comum"><span class="ico">🍳</span><b>Espaço gourmet</b><span>para receber amigos</span></div>
+      <div class="comum"><span class="ico">🧺</span><b>Lavanderia</b><span>no prédio</span></div>
+      <div class="comum"><span class="ico">🛒</span><b>Mini mercado</b><span>24 horas</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="unidades">
+  <div class="wrap">
+    <h2>Unidades disponíveis</h2>
+    <p class="sec-sub">Todas mobiliadas, prontas para morar.</p>
+    <div class="unidades">
+      <div class="card">
+        <img src="assets/img/unidades/quarto-02.jpg" alt="Studio com cama e cozinha integrada">
+        <div class="body">
+          <span class="badge">Última unidade</span>
+          <h3>Studio 24 m² · andar alto</h3>
+          <p class="det">Mobiliado · ideal para 1 pessoa</p>
+          <p class="preco">R$ 3.900<small>/mês</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/img/unidades/quarto-04.jpg" alt="Studio com varanda e vista">
+        <div class="body">
+          <h3>Studio 28 m² · com varanda</h3>
+          <p class="det">Mobiliado · home office</p>
+          <p class="preco">R$ 4.300<small>/mês</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/img/unidades/quarto-07.jpg" alt="Studio amplo com cama de casal">
+        <div class="body">
+          <h3>Studio duplo 32 m² · 2 camas</h3>
+          <p class="det">Mobiliado · para dividir</p>
+          <p class="preco">R$ 4.500<small>/mês</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta" id="contato">
+  <div class="in">
+    <div>
+      <h2>Nova fase da vida, novo endereço.</h2>
+      <p>Passou no Insper ou começou na Faria Lima? Agende um tour online ou presencial.</p>
+    </div>
+    <a class="btn btn-amber" href="mailto:luciane@arvi.com.br?subject=Quero%20agendar%20um%20tour">Agendar tour</a>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="in">
+    <span>ARVI · Studios na Vila Olímpia · Rua Quatá — São Paulo/SP</span>
+    <span>Instagram · TikTok · WhatsApp · LinkedIn</span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Foto ampliada"><img src="" alt=""></div>
+
+<script>
+  const lb = document.getElementById('lightbox');
+  const lbImg = lb.querySelector('img');
+  document.querySelectorAll('.galeria figure, .strip img, .card > img').forEach(el => {
+    el.addEventListener('click', () => {
+      const img = el.tagName === 'IMG' ? el : el.querySelector('img');
+      lbImg.src = img.src; lbImg.alt = img.alt;
+      lb.classList.add('aberta');
+    });
+    if (el.tagName === 'IMG') el.style.cursor = 'zoom-in';
+  });
+  lb.addEventListener('click', () => lb.classList.remove('aberta'));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('aberta'); });
+</script>
+</body>
+</html>
