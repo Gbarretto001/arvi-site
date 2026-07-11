@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 72" width="96" height="72">
+  <title>Arvi</title>
+  <rect x="2" y="2" width="92" height="68" rx="4" fill="#04342C"/>
+  <rect x="7" y="7" width="82" height="58" rx="2" fill="none" stroke="#E1F5EE" stroke-width="2.5"/>
+  <text x="48" y="54" font-family="Didot, 'Bodoni MT', 'Times New Roman', Georgia, serif" font-size="46" fill="#E1F5EE" text-anchor="middle" letter-spacing="-4">AV</text>
+</svg>
