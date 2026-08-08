@@ -21,8 +21,16 @@ reinicia automaticamente as sessões de reconhecimento para dar conta de
 
 ## Como abrir e rodar
 
-Requer **macOS com Xcode 16+** e um **iPad com iPadOS 17+** (o reconhecimento
-de voz não funciona no Simulador — use um iPad real).
+Há duas formas, dependendo do que você tem:
+
+### Opção A — Só com o iPad (sem Mac) 👉 recomendada
+Use a pasta **`GravadorDeAulas.swiftpm`** com o app gratuito **Swift Playgrounds**.
+Passo a passo completo em **[`COMO-RODAR-NO-IPAD.md`](COMO-RODAR-NO-IPAD.md)**.
+
+### Opção B — Com um Mac + Xcode
+Use a pasta **`GravadorDeAulas/`** (projeto `GravadorDeAulas.xcodeproj`). Requer
+**macOS com Xcode 16+** e um **iPad com iPadOS 17+** (o reconhecimento de voz não
+funciona no Simulador — use um iPad real).
 
 1. Abra `GravadorDeAulas.xcodeproj` no Xcode.
 2. Em **Signing & Capabilities**, selecione seu *Team* (conta Apple gratuita
@@ -30,6 +38,8 @@ de voz não funciona no Simulador — use um iPad real).
 3. Conecte o iPad, selecione-o como destino e clique em **Run** (▶).
 4. Na primeira gravação, aceite as permissões de **Microfone** e de
    **Reconhecimento de Voz**.
+
+> Os dois usam exatamente o mesmo código Swift; muda só o empacotamento.
 
 ## Estrutura do código
 
