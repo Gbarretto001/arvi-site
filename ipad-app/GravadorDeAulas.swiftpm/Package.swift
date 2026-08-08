@@ -16,7 +16,6 @@ let package = Package(
             name: "Gravador de Aulas",
             targets: ["AppModule"],
             bundleIdentifier: "com.arvi.GravadorDeAulas",
-            teamIdentifier: "",
             displayVersion: "1.0",
             bundleVersion: "1",
             supportedDeviceFamilies: [
